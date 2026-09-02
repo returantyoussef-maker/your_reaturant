@@ -60,35 +60,85 @@
 
                 <!-- روابط التنقل وأدوات التحكم لسطح المكتب -->
                 <nav class="d-flex align-items-center gap-2" aria-label="القائمة الرئيسية">
+                
                     <a href="index.html" class="nav-link-custom active">
-                        <i class="fa-solid fa-house"></i> <span data-i18n="nav_home">الرئيسية</span>
+                        <i class="fa-solid fa-house"></i>
+                        <span data-i18n="nav_home">الرئيسية</span>
                     </a>
+                
                     <a href="menu.html" class="nav-link-custom">
-                        <i class="fa-solid fa-utensils"></i> <span data-i18n="nav_food_menu">قائمة الطعام (المنيو)</span>
+                        <i class="fa-solid fa-utensils"></i>
+                        <span data-i18n="nav_food_menu">قائمة الطعام (المنيو)</span>
                     </a>
+                
                     <a href="checkout.html" class="nav-link-custom">
-                        <i class="fa-solid fa-motorcycle"></i> <span data-i18n="nav_track">تتبع طلبي</span>
+                        <i class="fa-solid fa-motorcycle"></i>
+                        <span data-i18n="nav_track">تتبع طلبي</span>
                     </a>
-                    <button type="button" class="nav-link-custom border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#contactUsModal">
-                        <i class="fa-solid fa-headset"></i> <span data-i18n="nav_contact">تواصل معنا</span>
+                
+                    <button type="button"
+                            class="nav-link-custom border-0 bg-transparent"
+                            data-bs-toggle="modal"
+                            data-bs-target="#contactUsModal">
+                        <i class="fa-solid fa-headset"></i>
+                        <span data-i18n="nav_contact">تواصل معنا</span>
                     </button>
-                    <button type="button" class="nav-link-custom border-0 bg-transparent" onclick="toggleCartDrawer()">
-                        <i class="fa-solid fa-basket-shopping text-danger"></i> <span data-i18n="nav_cart">السلة</span>
+                
+                    <button type="button"
+                            class="nav-link-custom border-0 bg-transparent"
+                            onclick="toggleCartDrawer()">
+                        <i class="fa-solid fa-basket-shopping text-danger"></i>
+                        <span data-i18n="nav_cart">السلة</span>
                         <span id="cartBadge" class="badge bg-danger rounded-pill ms-1">0</span>
                     </button>
-                    
-                    <!-- زر تبديل اللغة لسطح المكتب -->
-                    <button type="button" class="btn-lang-toggle ms-1" onclick="toggleSiteLanguage()" aria-label="تغيير اللغة">
+                
+                    <!-- اللغة -->
+                    <button type="button"
+                            class="btn-lang-toggle ms-1"
+                            onclick="toggleSiteLanguage()"
+                            aria-label="تغيير اللغة">
+                
                         <i class="fa-solid fa-globe text-warning"></i>
-                        <span class="site-lang-label">English</span>
+                
+                        <span class="site-lang-label">
+                            English
+                        </span>
+                
                     </button>
-
-                    <!-- منطقة حساب العميل لسطح المكتب -->
+                
+                    <!-- ================================= -->
+                    <!-- زر لوحة التحكم -->
+                    <!-- ================================= -->
+                
+                    <a href="/admin/dashboard.html"
+                       class="nav-link-custom admin-dashboard-btn">
+                
+                        <i class="fa-solid fa-gauge-high text-warning"></i>
+                
+                        <span>
+                            لوحة التحكم
+                        </span>
+                
+                    </a>
+                
+                    <!-- حساب العميل -->
                     <div id="userHeaderArea" class="ms-2">
-                        <button type="button" class="btn-guest-login" data-bs-toggle="modal" data-bs-target="#loginModal">
-                            <i class="fa-solid fa-arrow-right-to-bracket"></i> <span data-i18n="nav_login">تسجيل الدخول</span>
+                
+                        <button type="button"
+                                class="btn-guest-login"
+                                data-bs-toggle="modal"
+                                data-bs-target="#loginModal">
+                
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                
+                            <span data-i18n="nav_login">
+                                تسجيل الدخول
+                            </span>
+                
                         </button>
+                
                     </div>
+                
                 </nav>
 
             </div>
@@ -145,30 +195,90 @@
             </div>
 
             <!-- روابط التنقل السريعة -->
-            <div class="drawer-section">
-                <div class="drawer-nav-list d-flex flex-column gap-1">
-                    <a href="index.html" class="drawer-nav-item">
-                        <i class="fa-solid fa-house text-primary"></i>
-                        <span data-i18n="nav_home">الرئيسية</span>
-                    </a>
-                    <a href="menu.html" class="drawer-nav-item">
-                        <i class="fa-solid fa-utensils text-danger"></i>
-                        <span data-i18n="nav_food_menu">قائمة الطعام (المنيو)</span>
-                    </a>
-                    <a href="checkout.html" class="drawer-nav-item">
-                        <i class="fa-solid fa-motorcycle text-success"></i>
-                        <span data-i18n="nav_track">تتبع طلبي</span>
-                    </a>
-                    <button type="button" class="drawer-nav-item border-0 bg-transparent text-start w-100" onclick="closeMobileDrawer(); toggleCartDrawer();">
-                        <i class="fa-solid fa-basket-shopping text-warning"></i>
-                        <span data-i18n="nav_cart">سلة المشتريات</span>
-                    </button>
-                    <button type="button" class="drawer-nav-item border-0 bg-transparent text-start w-100" data-bs-toggle="modal" data-bs-target="#contactUsModal" onclick="closeMobileDrawer();">
-                        <i class="fa-solid fa-headset text-info"></i>
-                        <span data-i18n="nav_contact">تواصل معنا</span>
-                    </button>
-                </div>
-            </div>
+<div class="drawer-section">
+
+    <div class="drawer-nav-list d-flex flex-column gap-1">
+
+        <!-- الرئيسية -->
+        <a href="index.html" class="drawer-nav-item">
+
+            <i class="fa-solid fa-house text-primary"></i>
+
+            <span data-i18n="nav_home">
+                الرئيسية
+            </span>
+
+        </a>
+
+        <!-- المنيو -->
+        <a href="menu.html" class="drawer-nav-item">
+
+            <i class="fa-solid fa-utensils text-danger"></i>
+
+            <span data-i18n="nav_food_menu">
+                قائمة الطعام (المنيو)
+            </span>
+
+        </a>
+
+        <!-- تتبع الطلب -->
+        <a href="checkout.html" class="drawer-nav-item">
+
+            <i class="fa-solid fa-motorcycle text-success"></i>
+
+            <span data-i18n="nav_track">
+                تتبع طلبي
+            </span>
+
+        </a>
+
+        <!-- السلة -->
+        <button type="button"
+                class="drawer-nav-item border-0 bg-transparent text-start w-100"
+                onclick="closeMobileDrawer(); toggleCartDrawer();">
+
+            <i class="fa-solid fa-basket-shopping text-warning"></i>
+
+            <span data-i18n="nav_cart">
+                سلة المشتريات
+            </span>
+
+        </button>
+
+        <!-- تواصل معنا -->
+        <button type="button"
+                class="drawer-nav-item border-0 bg-transparent text-start w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#contactUsModal"
+                onclick="closeMobileDrawer();">
+
+            <i class="fa-solid fa-headset text-info"></i>
+
+            <span data-i18n="nav_contact">
+                تواصل معنا
+            </span>
+
+        </button>
+
+
+        <!-- ================================= -->
+        <!-- لوحة التحكم -->
+        <!-- ================================= -->
+
+        <a href="/admin/dashboard.html"
+           class="drawer-nav-item admin-dashboard-btn">
+
+            <i class="fa-solid fa-gauge-high text-warning"></i>
+
+            <span>
+                لوحة التحكم
+            </span>
+
+        </a>
+
+    </div>
+
+</div>
 
             <!-- تذييل القائمة الجانبية -->
             <div class="drawer-footer mt-auto pt-3 border-top text-center text-muted small">
