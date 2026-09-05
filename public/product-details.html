@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-page-title="English English">English English - English</title>
+    <!-- Google Fonts + Font Awesome 6 + Bootstrap 5 RTL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link id="dynamicGoogleFont" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=Tajawal:wght@400;700;800;900&family=Cairo:wght@400;700;800&family=Almarai:wght@400;700;800&family=Alexandria:wght@400;700;800&family=Changa:wght@400;700;800&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Header / Navbar -->
+    <!-- English English English English (English English English English English) -->
+    <header class="main-navbar">
+        <div class="container">
+            
+            <!-- 1. English English English English English English (< 992px) -->
+            <div class="mobile-header-bar d-flex d-lg-none align-items-center justify-content-between w-100">
+                
+                <!-- English English English English English English English English English English English English English -->
+                <div class="mobile-header-slot mobile-header-slot-theme" aria-hidden="true"></div>
+
+                <!-- English: English English English (English English English English English) -->
+                <div class="mobile-header-slot mobile-header-slot-brand">
+                    <a href="index.html" class="mobile-top-brand text-decoration-none d-inline-flex align-items-center justify-content-center gap-2">
+                        <div class="mobile-logo-circle">
+                            <img src="uploads/logo.jpeg" alt="English English" data-restaurant-logo loading="eager" width="34" height="34" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=100'">
+                        </div>
+                        <span class="mobile-top-brand-name fw-black" data-content="brandName">English</span>
+                    </a>
+                </div>
+
+                <!-- English 2: English English English English English -->
+                <div class="mobile-header-slot mobile-header-slot-menu">
+                    <button type="button" class="mobile-top-btn mobile-menu-trigger" data-bs-toggle="offcanvas" data-bs-target="#mobileNavDrawer" aria-controls="mobileNavDrawer" aria-label="English English" id="mobileMenuTriggerBtn">
+                        <i class="fa-solid fa-bars"></i>
+                        <span class="mobile-menu-indicator d-none" id="mobileUserIndicator"></span>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- 2. English English English English English English (>= 992px) -->
+            <div class="desktop-header-bar d-none d-lg-flex align-items-center justify-content-between w-100">
+                
+                <!-- English English English English English -->
+                <a href="index.html" class="brand-logo-box text-decoration-none d-flex align-items-center gap-2">
+                    <div class="brand-logo-circle">
+                        <img src="uploads/logo.jpeg" alt="English English" data-restaurant-logo loading="eager" width="42" height="42" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=100'">
+                    </div>
+                    <div class="brand-logo-text">
+                        <h5 class="fw-black m-0 lh-1 fs-6" data-content="brandName">English</h5>
+                        <small class="text-muted d-block mt-1" style="font-size: 0.72rem;" data-content="brandTagline">English English English English English English</small>
+                    </div>
+                </a>
+
+                <!-- English English English English English English -->
+                <nav class="d-flex align-items-center gap-2" aria-label="English English">
+                    <a href="index.html" class="nav-link-custom">
+                        <i class="fa-solid fa-house"></i> <span data-i18n="nav_home">English</span>
+                    </a>
+                    <a href="menu.html" class="nav-link-custom">
+                        <i class="fa-solid fa-utensils"></i> <span data-i18n="nav_food_menu">English English (English)</span>
+                    </a>
+                    <a href="checkout.html" class="nav-link-custom">
+                        <i class="fa-solid fa-motorcycle"></i> <span data-i18n="nav_track">English English</span>
+                    </a>
+                    <button type="button" class="nav-link-custom border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#contactUsModal">
+                        <i class="fa-solid fa-headset"></i> <span data-i18n="nav_contact">English English</span>
+                    </button>
+                    <button type="button" class="nav-link-custom border-0 bg-transparent" onclick="toggleCartDrawer()">
+                        <i class="fa-solid fa-basket-shopping text-danger"></i> <span data-i18n="nav_cart">English</span>
+                        <span id="cartBadge" class="badge bg-danger rounded-pill ms-1">0</span>
+                    </button>
+                    
+                    <!-- English English English English English -->
+                    <button type="button" class="btn-lang-toggle ms-1" onclick="toggleSiteLanguage()" aria-label="English English">
+                        <i class="fa-solid fa-globe text-warning"></i>
+                        <span class="site-lang-label">English</span>
+                    </button>
+
+                    <!-- English English English English English -->
+                    <div id="userHeaderArea" class="ms-2">
+                        <button type="button" class="btn-guest-login" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i> <span data-i18n="nav_login">English English</span>
+                        </button>
+                    </div>
+                </nav>
+
+            </div>
+
+        </div>
+    </header>
+
+    <!-- English English English English (Mobile Navigation & Account Drawer) -->
+    <div class="offcanvas offcanvas-start mobile-nav-offcanvas" tabindex="-1" id="mobileNavDrawer" aria-labelledby="mobileNavDrawerLabel">
+        
+        <!-- English English English -->
+        <div class="offcanvas-header border-bottom py-3 px-3.5 d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-2">
+                <div class="mobile-drawer-logo-circle">
+                    <img src="uploads/logo.jpeg" alt="English English" data-restaurant-logo width="32" height="32" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=100'">
+                </div>
+                <div>
+                    <h6 class="fw-black m-0 lh-1 fs-6" id="mobileNavDrawerLabel" data-content="brandName">English</h6>
+                    <small class="text-muted d-block mt-0.5" style="font-size: 0.7rem;" data-content="brandTagline">English English English English English English</small>
+                </div>
+            </div>
+            <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas" aria-label="English"></button>
+        </div>
+
+        <!-- English English English -->
+        <div class="offcanvas-body p-3.5 d-flex flex-column gap-3.5">
+            
+            <!-- English English English English (English) -->
+            <div id="drawerUserSection" class="drawer-section">
+                <div class="drawer-guest-box p-3 rounded-4 bg-light border text-center">
+                    <div class="drawer-guest-icon mb-2">
+                        <i class="fa-solid fa-circle-user text-muted fs-1"></i>
+                    </div>
+                    <h6 class="fw-bold text-dark mb-1" data-i18n="user_guest_welcome">English English English English English</h6>
+                    <p class="small text-muted mb-3" data-i18n="user_guest_prompt">English English English English English English English</p>
+                    <button type="button" class="btn btn-brand-red w-100 py-2.5 rounded-pill fw-bold shadow-sm" onclick="closeMobileDrawerAndOpenLogin()">
+                        <i class="fa-solid fa-arrow-right-to-bracket me-1"></i> <span data-i18n="nav_login">English English / English English</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- English English English English English English -->
+            <div class="drawer-section drawer-prefs-box p-3 rounded-4 bg-light border">
+                <div class="d-flex align-items-center justify-content-between mb-2.5">
+                    <span class="small fw-bold text-dark d-flex align-items-center gap-1.5">
+                        <i class="fa-solid fa-globe text-warning"></i>
+                        <span data-i18n="language">English</span>
+                    </span>
+                    <div class="drawer-lang-selector btn-group btn-group-sm rounded-pill p-0.5 bg-white border" role="group">
+                        <button type="button" class="btn btn-sm rounded-pill px-2.5 fw-bold active" id="drawerLangAr" onclick="setSiteLanguage('ar')">English</button>
+                        <button type="button" class="btn btn-sm rounded-pill px-2.5 fw-bold" id="drawerLangEn" onclick="setSiteLanguage('en')">English</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- English English English -->
+            <div class="drawer-section">
+                <div class="drawer-nav-list d-flex flex-column gap-1">
+                    <a href="index.html" class="drawer-nav-item">
+                        <i class="fa-solid fa-house text-primary"></i>
+                        <span data-i18n="nav_home">English</span>
+                    </a>
+                    <a href="menu.html" class="drawer-nav-item">
+                        <i class="fa-solid fa-utensils text-danger"></i>
+                        <span data-i18n="nav_food_menu">English English (English)</span>
+                    </a>
+                    <a href="checkout.html" class="drawer-nav-item">
+                        <i class="fa-solid fa-motorcycle text-success"></i>
+                        <span data-i18n="nav_track">English English</span>
+                    </a>
+                    <button type="button" class="drawer-nav-item border-0 bg-transparent text-start w-100" onclick="closeMobileDrawer(); toggleCartDrawer();">
+                        <i class="fa-solid fa-basket-shopping text-warning"></i>
+                        <span data-i18n="nav_cart">English English</span>
+                    </button>
+                    <button type="button" class="drawer-nav-item border-0 bg-transparent text-start w-100" data-bs-toggle="modal" data-bs-target="#contactUsModal" onclick="closeMobileDrawer();">
+                        <i class="fa-solid fa-headset text-info"></i>
+                        <span data-i18n="nav_contact">English English</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- English English English -->
+            <div class="drawer-footer mt-auto pt-3 border-top text-center text-muted small">
+                <span data-content="brandName">English</span> - <span data-i18n="authentic_taste">English English English</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- English English — English English English English English English English English -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-item"><i class="fa-solid fa-bolt"></i><span data-i18n="trust_fast">English English English 30 English</span></div>
+            <div class="trust-item"><i class="fa-solid fa-fire-burner"></i><span data-i18n="trust_fresh">English English English</span></div>
+            <div class="trust-item"><i class="fa-solid fa-shield-halved"></i><span data-i18n="trust_safe">English English English English</span></div>
+            <div class="trust-item"><i class="fa-solid fa-star"></i><span data-i18n="trust_rating">English 4.8 English English</span></div>
+        </div>
+    </section>
+
+    <!-- English English English English English English MongoDB Atlas -->
+    <div class="container py-5">
+        <a href="menu.html" class="btn btn-outline-dark rounded-pill px-4 fw-bold mb-4" data-editor-id="back-to-menu-btn" data-i18n="back_to_menu">← English English English</a>
+
+        <!-- English English English English English English English English -->
+        <div class="bg-white p-4 p-md-5 rounded-3 shadow-sm border mb-5 reveal" data-editor-id="product-details-card-wrapper">
+            <div class="row g-5 align-items-center">
+                
+                <!-- 1. English English English English -->
+                <div class="col-lg-6">
+                    <div class="position-relative mb-3 rounded-3 overflow-hidden border shadow-sm" style="height: 380px;">
+                        <img id="detailsMainImage" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1" class="w-100 h-100 object-fit-cover" alt="English">
+                        <span id="detailsDiscountBadge" class="badge-discount d-none">English 0%</span>
+                        <span id="detailsBadgePrice" class="badge-price">English English...</span>
+                    </div>
+
+                    <!-- English English English Thumbnails -->
+                    <div id="detailsThumbnailsRow" class="d-flex gap-2 overflow-auto pb-2"></div>
+                </div>
+
+                <!-- 2. English English English English -->
+                <div class="col-lg-6">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span id="detailsCategoryBadge" class="badge bg-warning text-dark fw-bold">English English</span>
+                        <span id="detailsTopSellerBadge" class="badge bg-danger d-none"><i class="fa-solid fa-trophy me-1"></i> English English</span>
+                        <span id="detailsDealBadge" class="badge bg-success d-none"><i class="fa-solid fa-fire me-1"></i> English English English</span>
+                    </div>
+
+                    <h1 id="detailsTitle" class="fw-black display-6 mb-2">English English English English English English English...</h1>
+                    <div class="d-flex align-items-center gap-2 mb-3 text-warning">
+                        <span class="fs-5"><i class="fa-solid fa-star text-warning me-1"></i><strong id="detailsRatingScore" class="text-dark">5.0</strong></span>
+                        <small class="text-muted">(<span id="detailsReviewsCount">0</span> English English English)</small>
+                    </div>
+
+                    <p id="detailsShortDesc" class="lead text-muted fs-6 mb-4">English English English English English...</p>
+
+                    <!-- English English English -->
+                    <div id="detailsSizesWrapper" class="mb-4">
+                        <label class="form-label fw-bold d-block text-dark"><i class="fa-solid fa-ruler-combined me-1 text-brass"></i> English English / English:</label>
+                        <div id="detailsSizesContainer" class="d-flex flex-wrap gap-2"></div>
+                    </div>
+
+                    <!-- English English English English -->
+                    <div id="detailsAddonsWrapper" class="mb-4">
+                        <label class="form-label fw-bold d-block text-dark"><i class="fa-solid fa-circle-plus me-1 text-brass"></i> English English English:</label>
+                        <div id="detailsAddonsContainer" class="row g-2"></div>
+                    </div>
+
+                    <!-- English English English English English English -->
+                    <div class="bg-light p-3 rounded-3 border mb-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>
+                                <small class="text-muted d-block">English English English:</small>
+                                <span id="detailsComputedPrice" class="fs-2 fw-black text-danger">0 English.English</span>
+                                <span id="detailsOldPrice" class="old-price text-muted text-decoration-line-through me-2 d-none">0 English.English</span>
+                            </div>
+
+                            <!-- English English -->
+                            <div class="d-flex align-items-center gap-2 bg-white border rounded-pill p-1 px-3">
+                                <button class="btn btn-sm text-dark fw-bold p-0 px-2" onclick="changeDetailsQty(-1)">-</button>
+                                <span id="detailsQtyDisplay" class="fw-black fs-5 mx-2">1</span>
+                                <button class="btn btn-sm text-dark fw-bold p-0 px-2" onclick="changeDetailsQty(1)">+</button>
+                            </div>
+                        </div>
+
+
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <button class="btn btn-brand-red w-100 py-3 fw-bold shadow" data-editor-id="details-add-to-cart-btn" onclick="addDetailsToCartDirect()">
+                                    <i class="fa-solid fa-basket-shopping me-1"></i> English English English
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-brand-dark w-100 py-3 fw-bold shadow" data-editor-id="details-buy-now-btn" onclick="buyNowDirect()">
+                                    <i class="fa-solid fa-bolt me-1"></i> English English English
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p id="detailsFullDesc" class="text-muted small border-top pt-3"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. English English English English English English -->
+        <div class="bg-white p-4 p-md-5 rounded-3 shadow-sm border mb-5 reveal" data-editor-id="reviews-section-card">
+            <h3 class="fw-black mb-4" data-editor-id="reviews-section-title"><i class="fa-solid fa-star text-warning me-2"></i> English English English English English</h3>
+
+            <div class="row g-4 mb-4 pb-4 border-bottom align-items-center">
+                <div class="col-md-4 text-center border-start">
+                    <h1 class="display-3 fw-black text-danger m-0" id="reviewsBigScore">5.0</h1>
+                    <div class="text-warning fs-5">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <small class="text-muted">English English English English</small>
+                </div>
+                <div class="col-md-8">
+                    <div class="row g-3">
+                        <div class="col-md-4 text-center bg-light p-3 rounded-3 border">
+                            <small class="text-muted d-block"><i class="fa-solid fa-drumstick-bite me-1 text-danger"></i> English English English</small>
+                            <strong class="fs-5 text-dark" id="avgFoodScore">5.0 / 5</strong>
+                        </div>
+                        <div class="col-md-4 text-center bg-light p-3 rounded-3 border">
+                            <small class="text-muted d-block"><i class="fa-solid fa-motorcycle me-1 text-primary"></i> English English</small>
+                            <strong class="fs-5 text-dark" id="avgDeliveryScore">5.0 / 5</strong>
+                        </div>
+                        <div class="col-md-4 text-center bg-light p-3 rounded-3 border">
+                            <small class="text-muted d-block"><i class="fa-solid fa-bell-concierge me-1 text-warning"></i> English English</small>
+                            <strong class="fs-5 text-dark" id="avgServiceScore">5.0 / 5</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="productReviewsListContainer" class="mb-5"></div>
+
+            <div class="bg-light p-4 rounded-3 border">
+                <h5 class="fw-bold mb-3"><i class="fa-solid fa-pen me-2"></i> English English English English English</h5>
+                <form onsubmit="submitCustomerReviewWithImages(event)">
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-4">
+                            <label class="form-label small fw-bold">English English English *</label>
+                            <select id="reviewFoodRating" class="form-select" required>
+                                <option value="5">5 English (English English 5/5)</option>
+                                <option value="4">4 English (English English 4/5)</option>
+                                <option value="3">3 English (English 3/5)</option>
+                                <option value="2">English (English English 2/5)</option>
+                                <option value="1">English English (English 1/5)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small fw-bold">English English English *</label>
+                            <select id="reviewDeliveryRating" class="form-select" required>
+                                <option value="5">5 English (English English)</option>
+                                <option value="4">4 English (English)</option>
+                                <option value="3">3 English (English)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small fw-bold">English English English *</label>
+                            <select id="reviewServiceRating" class="form-select" required>
+                                <option value="5">5 English (English English)</option>
+                                <option value="4">4 English (English)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">English English English</label>
+                        <textarea id="reviewComment" class="form-control" rows="3" placeholder="English English English English English English..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-brand-dark px-5 py-2 fw-bold"><i class="fa-solid fa-paper-plane me-1"></i> English English English</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 4. English English English MongoDB -->
+        <div class="my-5">
+            <h3 class="fw-black mb-4 reveal" data-editor-id="similar-products-title"> English English English English English</h3>
+            <div class="row g-4" id="similarProductsContainer"></div>
+        </div>
+    </div>
+
+    <!-- English English English -->
+    <div class="cart-drawer-overlay" id="cartDrawerOverlay" onclick="toggleCartDrawer()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-header">
+            <h5 class="fw-bold m-0" style="color: white;"><i class="fa-solid fa-basket-shopping me-2"></i> English English (<span id="cartDrawerCount">0</span> English)</h5>
+            <button class="btn-close" onclick="toggleCartDrawer()"></button>
+        </div>
+        <div class="cart-drawer-body">
+            <div class="cart-total-banner">
+                English English English: <span id="cartDrawerTotal">0</span> English.English
+            </div>
+            <div id="cartDrawerItems"></div>
+
+            <form onsubmit="submitOrder(event)" class="mt-3 border-top pt-3">
+                <h6 class="fw-bold text-danger mb-3"><i class="fa-solid fa-location-dot me-1"></i> English English English English GPS</h6>
+                <div class="mb-3">
+                    <label class="form-label small fw-bold">English English English *</label>
+                    <select id="deliveryAreaSelect" class="form-select" onchange="updateDeliveryFeeFromSelect()" required></select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label small fw-bold">English English *</label>
+                    <input type="text" id="custName" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label small fw-bold">English English English *</label>
+                    <input type="tel" id="custPhone" class="form-control" required>
+                </div>
+                <div class="row g-2 mb-3">
+                    <div class="col-6">
+                        <label class="form-label small fw-bold"><i class="fa-solid fa-chair me-1"></i> English English</label>
+                        <input type="text" id="custTableNumber" class="form-control" placeholder="English: English 5 (English English English)">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label small fw-bold"><i class="fa-solid fa-phone-volume me-1"></i> English English English</label>
+                        <input type="tel" id="custExtraPhone" class="form-control" placeholder="English English English (English)">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label small fw-bold">English English *</label>
+                    <textarea id="custAddress" class="form-control" rows="2" required></textarea>
+                </div>
+                <button type="submit" id="submitOrderBtn" class="btn btn-brand-red w-100 py-3 shadow fs-6">
+                    <i class="fa-solid fa-paper-plane me-1"></i> English English English English English
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- English "English English" -->
+    <div class="modal fade" id="contactUsModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header-custom bg-dark text-white">
+                    <h4 class="fw-bold m-0 text-warning"><i class="fa-solid fa-phone me-2 text-warning"></i> English English <span data-restaurant-name>English</span></h4>
+                    <small class="text-white-50">English English English English English English English</small>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <div class="p-3 bg-light rounded-3 border mb-3">
+                        <small class="text-muted d-block mb-1"><i class="fa-brands fa-whatsapp text-success me-1"></i> English English English English:</small>
+                        <h4 class="fw-black text-success direction-ltr" id="contactWhatsappDisplay">01120751467</h4>
+                        <a id="contactWhatsappLink" href="#" target="_blank" class="btn btn-success btn-sm fw-bold rounded-pill px-4 mt-2">
+                            <i class="fa-brands fa-whatsapp me-1"></i> English English English English English
+                        </a>
+                    </div>
+
+                    <div class="p-3 bg-light rounded-3 border mb-3">
+                        <small class="text-muted d-block mb-1"><i class="fa-solid fa-phone text-primary me-1"></i> English English English:</small>
+                        <h4 class="fw-black text-dark direction-ltr" id="contactPhoneDisplay">01120751467</h4>
+                    </div>
+
+                    <div class="p-3 bg-light rounded-3 border mb-2">
+                        <small class="text-muted d-block mb-1"><i class="fa-regular fa-clock me-1 text-danger"></i> English English English English:</small>
+                        <strong class="fw-bold text-danger" id="contactWorkingHoursDisplay">English English 10:00 AM English 12:00 AM</strong>
+                    </div>
+
+                    <button class="btn btn-brand-dark w-100 py-2 mt-3 fw-bold" data-bs-dismiss="modal">English</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- English English English + QR English English English English English -->
+    <div class="modal fade" id="qrSuccessModal" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4 rounded-4">
+                <h4 class="fw-black text-success mb-1"><i class="fa-solid fa-circle-check me-2 text-success"></i> English English English English!</h4>
+                <p class="text-muted small mb-3">
+                    English English: <strong id="qrModalOrderNumber" class="text-dark"></strong> |
+                    English: <strong id="qrModalTotal" class="text-danger"></strong>
+                </p>
+
+                <img id="qrModalImage" src="" alt="English QR English" class="border p-2 shadow-sm rounded-3 mx-auto d-block" style="width:220px;">
+
+                <p class="small text-muted mt-3 mb-4">
+                    English English English English English English English English English English English
+                </p>
+
+                <button class="btn btn-brand-dark w-100 py-2 fw-bold" data-bs-dismiss="modal">English</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- English English English English -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <span class="icon"><i class="fa-solid fa-house"></i></span>
+            <span>English</span>
+        </a>
+        <a href="menu.html" class="mobile-nav-item">
+            <span class="icon"><i class="fa-solid fa-utensils"></i></span>
+            <span>English</span>
+        </a>
+        <a href="#" class="mobile-nav-item" onclick="toggleCartDrawer(); return false;">
+            <span class="icon"><i class="fa-solid fa-basket-shopping"></i></span>
+            <span>English</span>
+        </a>
+        <a href="checkout.html" class="mobile-nav-item">
+            <span class="icon"><i class="fa-solid fa-receipt"></i></span>
+            <span>English</span>
+        </a>
+    </nav>
+
+    <!-- English English English -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header-custom p-4 pb-0 text-center">
+                    <h4 class="fw-black m-0 text-dark">English English English English</h4>
+                    <small class="text-muted">English English English English English English English English English</small>
+                    
+                    <div class="nav nav-pills nav-justified my-3 bg-light p-1 rounded-pill border" role="tablist">
+                        <button class="nav-link active rounded-pill fw-bold py-2" id="pills-login-tab" data-bs-toggle="pill" data-bs-target="#pills-login" type="button" role="tab"><i class="fa-solid fa-arrow-right-to-bracket me-1"></i> English English</button>
+                        <button class="nav-link rounded-pill fw-bold py-2" id="pills-register-tab" data-bs-toggle="pill" data-bs-target="#pills-register" type="button" role="tab"><i class="fa-solid fa-user-plus me-1"></i> English English English</button>
+                    </div>
+                </div>
+
+                <div class="modal-body p-4 pt-2">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="pills-login" role="tabpanel">
+                            <form onsubmit="handleCustomerLogin(event)">
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">English English *</label>
+                                    <input type="email" id="loginEmail" class="form-control" placeholder="name@example.com" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">English English *</label>
+                                    <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required>
+                                </div>
+                                <button type="submit" class="btn btn-brand-dark w-100 py-2.5 fw-bold shadow"><i class="fa-solid fa-lock me-1"></i> English English English</button>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade" id="pills-register" role="tabpanel">
+                            <form onsubmit="handleCustomerRegister(event)">
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">English English *</label>
+                                    <input type="text" id="regCustName" class="form-control" placeholder="English: English English" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">English English *</label>
+                                    <input type="email" id="regCustEmail" class="form-control" placeholder="name@example.com" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">English English *</label>
+                                    <input type="tel" id="regCustPhone" class="form-control" placeholder="01012345678" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">English English English *</label>
+                                    <input type="password" id="regCustPassword" class="form-control" placeholder="••••••••" minlength="6" required>
+                                </div>
+                                <button type="submit" class="btn btn-brand-red w-100 py-2.5 fw-bold shadow"><i class="fa-solid fa-user-plus me-1"></i> English English English English</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- English English English English English -->
+    <footer class="bg-dark text-white py-4 text-center border-top mt-5" data-editor-id="pdetails-footer">
+        <div class="container">
+            <p class="m-0 small text-white-50" data-editor-id="footer-copyright-text" data-content="footerText">English English English © 2026 English - English English English</p>
+        </div>
+    </footer>
+
+    <!-- English English English English English — English English English English English -->
+    <button type="button" id="floatingOrderCta" class="floating-cta" onclick="buyNowDirect()" aria-label="English English English English">
+        <i class="fa-solid fa-bolt"></i>
+        <span>English English</span>
+    </button>
+
+    <!-- Scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/cart-checkout.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+
+    <!-- English English English (Motion Enhancements) — English English English English English English -->
+    <script>
+    (function () {
+        var navbar = document.querySelector('.main-navbar');
+        var floatingCta = document.getElementById('floatingOrderCta');
+
+        function onScroll() {
+            var y = window.scrollY || document.documentElement.scrollTop || 0;
+            if (navbar) navbar.classList.toggle('scrolled', y > 30);
+            if (floatingCta) floatingCta.classList.toggle('show', y > 380);
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        var revealEls = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window && revealEls.length) {
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            revealEls.forEach(function (el) { io.observe(el); });
+        } else {
+            revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+        }
+    })();
+    </script>
+</body>
+</html>

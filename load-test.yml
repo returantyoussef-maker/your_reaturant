@@ -1,0 +1,59 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 5
+      rampTo: 20
+      name: "Warm-up phase"
+    - duration: 120
+      arrivalRate: 20
+      name: "Sustained load test"
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+  - name: "Customers browse the menu and home page"
+    weight: 8
+    flow:
+      - get:
+          url: "/api/products"
+      - get:
+          url: "/api/categories"
+      - get:
+          url: "/api/settings"
+      - get:
+          url: "/api/delivery-areas"
+      - get:
+          url: "/api/tables/available"
+
+  - name: "Customer journey: browse and create a new order"
+    weight: 2
+    flow:
+      - get:
+          url: "/api/products"
+          capture:
+            json: "$.products[0]._id"
+            as: "productId"
+      - get:
+          url: "/api/delivery-areas"
+          capture:
+            json: "$.areas[0]._id"
+            as: "deliveryAreaId"
+      - think: 2
+      - post:
+          url: "/api/orders"
+          json:
+            orderType: "delivery"
+            customer:
+              name: "Test customer {{ $randomString() }}"
+              phone: "010{{ $randomNumber(10000000, 99999999) }}"
+              address: "Main Street - Building 5 - Floor 2"
+              deliveryArea: "{{ deliveryAreaId }}"
+              gpsLocation:
+                lat: 30.0444
+                lng: 31.2357
+            items:
+              - _id: "{{ productId }}"
+                quantity: 2
+            paymentMethod: "COD"

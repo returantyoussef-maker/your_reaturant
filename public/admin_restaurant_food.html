@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English English English English</title>
+    <!-- Google Fonts + Font Awesome 6 + Bootstrap 5 RTL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&family=Cairo:wght@400;700;800;900&family=Almarai:wght@400;700;800&family=Alexandria:wght@400;700;800&family=Changa:wght@400;700;800&family=Reem+Kufi:wght@400;500;600;700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- English English "English" English English English English -->
+    <style>
+        /* ===== English English English English ===== */
+        .design-theme-card {
+            position: relative;
+            background: #ffffff;
+            border: 2px solid #eae7e1;
+            border-radius: 20px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all .28s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+        .design-theme-card:hover {
+            transform: translateY(-6px);
+            border-color: #d4af37;
+            box-shadow: 0 16px 32px rgba(26, 24, 22, 0.12);
+        }
+        .design-theme-card.is-selected {
+            border-color: #1a1816;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.35), 0 12px 28px rgba(0, 0, 0, 0.08);
+        }
+        .design-theme-card-badge {
+            position: absolute;
+            top: 12px;
+            inset-inline-end: 12px;
+            z-index: 4;
+            display: none;
+            align-items: center;
+            gap: 5px;
+            background: #198754;
+            color: #fff;
+            font-size: .7rem;
+            font-weight: 800;
+            padding: 5px 12px;
+            border-radius: 999px;
+            box-shadow: 0 4px 10px rgba(25, 135, 84, 0.3);
+        }
+        .design-theme-card-badge.is-active { display: inline-flex; }
+        
+        .design-tag-chip {
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            background: #f0ebe1;
+            color: #5c4e36;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+        .design-theme-card-title { font-weight: 900; margin: 6px 0 3px; font-size: 1rem; color: #1a1816; }
+        .design-theme-card-desc { font-size: .78rem; color: #6c757d; min-height: 2.8em; margin-bottom: 12px; line-height: 1.5; }
+        
+        /* English English English English English */
+        .design-palette-pills {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 14px;
+            padding: 6px;
+            background: #fbf9f5;
+            border-radius: 10px;
+            border: 1px solid #f0ede6;
+        }
+        .palette-circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            flex: 1;
+        }
+
+        /* ===== English English English English (Browser Mockup Viewport) ===== */
+        .browser-frame {
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid #dcd7cc;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+            background: #ffffff;
+            transition: all 0.3s ease;
+        }
+        .browser-header {
+            background: #23201d;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .browser-dots { display: flex; gap: 6px; }
+        .browser-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+        .browser-dot.red { background: #ff5f56; }
+        .browser-dot.yellow { background: #ffbd2e; }
+        .browser-dot.green { background: #27c93f; }
+        .browser-address-bar {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            color: #d6d0c4;
+            font-size: 0.72rem;
+            padding: 4px 14px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            direction: ltr;
+        }
+        .browser-view-controls {
+            display: flex;
+            gap: 4px;
+            background: rgba(255,255,255,0.08);
+            padding: 2px;
+            border-radius: 8px;
+        }
+        .btn-view-mode {
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-view-mode.active, .btn-view-mode:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        /* English English English English */
+        .design-mock-container {
+            background: #e9e5dd;
+            padding: 16px;
+            display: flex;
+            justify-content: center;
+            transition: padding 0.3s;
+        }
+        .design-mock {
+            width: 100%;
+            background: var(--dm-bg, #FAF6EC);
+            color: var(--dm-text, #221C15);
+            border-radius: var(--dm-radius, 16px);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .design-mock-container.view-tablet .design-mock { max-width: 540px; }
+        .design-mock-container.view-mobile .design-mock { max-width: 360px; }
+
+        .mock-announcement {
+            background: var(--dm-primary, #8E2130);
+            color: #ffffff;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .mock-navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 18px;
+            background: var(--dm-dark, #16120D);
+            color: #ffffff;
+            border-bottom: 2px solid var(--dm-secondary, #AE8A34);
+        }
+        .mock-brand-box { display: flex; align-items: center; gap: 8px; font-weight: 900; font-size: 0.95rem; }
+        .mock-brand-icon {
+            width: 26px; height: 26px; border-radius: 50%;
+            background: var(--dm-secondary, #AE8A34);
+            color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.7rem;
+        }
+        .mock-hero {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 36px 18px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .mock-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.85) 100%);
+            z-index: 1;
+        }
+        .mock-hero-content { position: relative; z-index: 2; }
+        .mock-hero-title { font-weight: 900; font-size: 1.5rem; margin-bottom: 4px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+        .mock-hero-sub { font-size: 0.88rem; opacity: 0.92; margin-bottom: 16px; font-weight: 500; }
+        .mock-btn-primary {
+            background: var(--dm-primary, #8E2130);
+            color: #fff;
+            font-weight: 800;
+            padding: 7px 20px;
+            border-radius: var(--dm-radius, 14px);
+            font-size: 0.82rem;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+        .mock-categories {
+            display: flex; gap: 8px; padding: 12px 16px;
+            overflow-x: auto; scrollbar-width: none;
+            background: var(--dm-bg, #FAF6EC);
+        }
+        .mock-category-pill {
+            white-space: nowrap;
+            padding: 6px 16px;
+            border-radius: 999px;
+            background: var(--dm-card, #fff);
+            border: 1px solid rgba(0,0,0,0.06);
+            font-size: 0.78rem;
+            font-weight: 700;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .mock-category-pill.active {
+            background: var(--dm-secondary, #AE8A34);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+        }
+        .mock-grid { padding: 8px 16px 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+        .mock-card {
+            background: var(--dm-card, #ffffff);
+            border-radius: var(--dm-radius, 14px);
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+            display: flex; flex-direction: column;
+        }
+        .mock-card-img {
+            height: 105px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .mock-card-tag {
+            position: absolute;
+            top: 6px;
+            inset-inline-start: 6px;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(4px);
+            color: #fff;
+            font-size: 0.62rem;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .mock-card-body { padding: 10px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+        .mock-card-title { font-weight: 800; font-size: 0.88rem; margin: 0; }
+        .mock-card-desc { font-size: 0.72rem; color: #777; line-height: 1.3; margin: 0; }
+        .mock-card-footer {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 8px;
+        }
+        .mock-price { color: var(--dm-primary, #8E2130); font-weight: 900; font-size: 0.95rem; }
+        .mock-add-btn {
+            background: var(--dm-primary, #8E2130);
+            color: #fff;
+            width: 26px; height: 26px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem; border: none;
+        }
+        .mock-floating-cart {
+            position: absolute;
+            bottom: 16px;
+            inset-inline-start: 50%;
+            transform: translateX(50%);
+            background: var(--dm-dark, #16120D);
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border: 1px solid var(--dm-secondary, #AE8A34);
+            z-index: 10;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <!-- English English English English English English English English -->
+    <audio id="orderNotificationSound" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3" preload="auto"></audio>
+
+    <!-- 1. English English English / English English English English -->
+    <div id="adminAuthSection" class="admin-login-wrapper">
+        <div class="admin-card-glass p-4 p-md-5">
+            <div class="text-center mb-4">
+                <div class="brand-logo-circle mx-auto mb-2" style="width: 60px; height: 60px; font-size: 1.5rem;"><i class="fa-solid fa-crown"></i></div>
+                <h3 class="fw-black text-dark mb-1">English English English English</h3>
+                <small class="text-muted" id="authSubtitle">English English English English English English...</small>
+            </div>
+
+            <form id="adminLoginForm" onsubmit="submitAdminLogin(event)" class="d-none">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">English English English *</label>
+                    <input type="email" id="loginAdminEmail" class="form-control form-control-lg" placeholder="admin@ora.com" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">English English *</label>
+                    <input type="password" id="loginAdminPassword" class="form-control form-control-lg" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-brand-dark w-100 py-3 fw-bold fs-6 shadow mt-2">
+                    <i class="fa-solid fa-right-to-bracket"></i> English English English English
+                </button>
+            </form>
+
+            <form id="superAdminRegisterForm" onsubmit="submitSuperAdminRegister(event)" class="d-none">
+                <div class="alert alert-warning small mb-3">
+                    <i class="fa-solid fa-triangle-exclamation"></i> English English English English English English. English English English English English English English!
+                </div>
+                <div class="mb-2">
+                    <label class="form-label small fw-bold">English English / English *</label>
+                    <input type="text" id="regAdminName" class="form-control" placeholder="English English" required>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label small fw-bold">English English *</label>
+                    <input type="email" id="regAdminEmail" class="form-control" placeholder="admin@ora.com" required>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label small fw-bold">English English *</label>
+                    <input type="tel" id="regAdminPhone" class="form-control" placeholder="01000000000" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label small fw-bold">English English English *</label>
+                    <input type="password" id="regAdminPassword" class="form-control" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-brand-red w-100 py-3 fw-bold shadow">
+                    <i class="fa-solid fa-shield-halved"></i> English English English English English (SuperAdmin)
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. English English English English English MongoDB -->
+    <div id="adminMainPortal" class="d-none">
+        <nav class="navbar navbar-dark bg-dark py-3 no-print admin-topbar" data-editor-id="admin-food-topbar">
+            <div class="container-fluid px-3 px-md-4 d-flex flex-wrap align-items-center gap-2">
+                <a class="navbar-brand d-flex align-items-center gap-2 me-auto" href="index.html">
+                    <i class="fa-solid fa-crown fs-3 text-warning"></i>
+                    <div>
+                        <h5 class="fw-bold m-0 text-warning" id="adminHeaderBrandName" data-content="brandName">English</h5>
+                        <small class="text-white-50 admin-topbar-subtitle">English English [English: <span id="currentAdminRoleBadge" class="text-warning fw-bold">SuperAdmin</span>]</small>
+                    </div>
+                </a>
+                <div class="d-flex align-items-center gap-2 admin-topbar-actions">
+                    <a href="index.html" class="btn btn-outline-light btn-sm rounded-pill" target="_blank" title="English English English"><i class="fa-solid fa-globe"></i><span class="btn-label"> English English</span></a>
+                    <button class="btn btn-outline-danger btn-sm rounded-pill" onclick="logoutAdminSession()" title="English English"><i class="fa-solid fa-right-from-bracket"></i><span class="btn-label"> English English</span></button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container my-4 no-print">
+            <div class="bg-white p-4 rounded-3 shadow-sm border mb-4">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="bg-dark text-warning p-3 rounded-circle fs-2 admin-header-icon"><i class="fa-solid fa-kitchen-set"></i></div>
+                        <div>
+                            <h3 class="fw-black m-0 admin-portal-title" id="adminPortalTitle">English English</h3>
+                            <p class="text-muted m-0 small">English English English English English English 100% English English English</p>
+                        </div>
+                    </div>
+                    <span class="audit-badge-success fs-6"><i class="fa-solid fa-cloud-arrow-up"></i> English English English </span>
+                </div>
+            </div>
+
+            <!-- English English (Tabs Bar) -->
+            <div class="admin-tabs-scroll mb-4 bg-white rounded-3 shadow-sm px-2 pt-2">
+                <button class="admin-tab-btn active" onclick="switchAdminTab('ordersTab', this)"><i class="fa-solid fa-box-open"></i> English English</button>
+                <button class="admin-tab-btn superadmin-only-ui" onclick="switchAdminTab('dishesTab', this)"><i class="fa-solid fa-utensils"></i> English English</button>
+                <button class="admin-tab-btn" onclick="switchAdminTab('categoriesTab', this)" id="categoriesTabBtn"><i class="fa-solid fa-folder-tree"></i> English English</button>
+                <button class="admin-tab-btn" onclick="switchAdminTab('designTab', this)" id="designTabBtn"><i class="fa-solid fa-palette"></i> English English English</button>
+                <button class="admin-tab-btn" onclick="switchAdminTab('themesTab', this)" id="themesTabBtn"><i class="fa-solid fa-swatchbook"></i> English</button>
+                <button class="admin-tab-btn superadmin-only-ui" onclick="switchAdminTab('couponsTab', this)"><i class="fa-solid fa-tags"></i> English English</button>
+                <button class="admin-tab-btn" onclick="switchAdminTab('deliveryTab', this)"><i class="fa-solid fa-motorcycle"></i> English English English</button>
+                <button class="admin-tab-btn" onclick="switchAdminTab('tablesTab', this)"><i class="fa-solid fa-chair"></i> English</button>
+                <button class="admin-tab-btn" onclick="switchAdminTab('reviewsTab', this)"><i class="fa-solid fa-star"></i> English English</button>
+                <button class="admin-tab-btn superadmin-only-ui" onclick="switchAdminTab('usersTab', this)" id="usersTabBtn"><i class="fa-solid fa-user-shield"></i> English English English English</button>
+            </div>
+
+            <!-- ================= English English: English English English ================= -->
+            <div id="ordersTab" class="admin-tab-content">
+                <!-- English English English English English -->
+                <div class="bg-white p-4 rounded-3 shadow-sm border mb-4">
+                    <h6 class="fw-bold text-danger mb-3"><i class="fa-solid fa-gear fs-5"></i> English English English English English</h6>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold"><i class="fa-brands fa-whatsapp"></i> English English English English *</label>
+                            <input type="tel" id="settingsWhatsappInput" class="form-control" placeholder="01120751467">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold"><i class="fa-solid fa-phone"></i> English English English *</label>
+                            <input type="tel" id="settingsPhoneInput" class="form-control" placeholder="01120751467">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small fw-bold"><i class="fa-regular fa-clock"></i> English English English (24H)</label>
+                            <input type="time" id="settingsOpeningTime" class="form-control" value="10:00">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small fw-bold"><i class="fa-solid fa-moon"></i> English English English (24H)</label>
+                            <input type="time" id="settingsClosingTime" class="form-control" value="23:59">
+                        </div>
+                        <div class="col-md-4 d-flex align-items-center gap-3 pt-3 flex-wrap">
+                            <div class="form-check form-switch me-3">
+                                <input class="form-check-input" type="checkbox" id="settingsAcceptingOrdersToggle" checked>
+                                <label class="form-check-label fw-bold small" for="settingsAcceptingOrdersToggle"><i class="fa-solid fa-lock-open"></i> English English</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="settingsAutoCloseToggle" checked>
+                                <label class="form-check-label fw-bold small" for="settingsAutoCloseToggle"><i class="fa-solid fa-lock"></i> English English</label>
+                            </div>
+                        </div>
+
+                        <div class="col-12" id="settingsLiveStatusHelper"></div>
+
+                        <div class="col-12 mt-3">
+                            <button class="btn btn-brand-dark px-4 fw-bold" onclick="saveFullRestaurantSettingsToDB()"><i class="fa-solid fa-floppy-disk"></i> English English English English English English</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- English English English English English QZ Tray -->
+                <div class="bg-white p-4 rounded-3 shadow-sm border mb-4">
+                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                        <h6 class="fw-bold text-danger m-0"><i class="fa-solid fa-print fs-5"></i> English English English English (QZ Tray)</h6>
+                        <div class="d-flex align-items-center gap-2">
+                            <span id="qzPrimaryBadge" class="qz-role-badge qz-role-secondary" title="English English English English English English English"><i class="fa-solid fa-user"></i> English</span>
+                            <span id="qzConnectionBadge" class="qz-status-badge qz-status-disconnected"><i class="fa-solid fa-circle-xmark"></i> QZ Tray English English</span>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold"><i class="fa-solid fa-print"></i> English English English *</label>
+                            <select id="qzPrinterSelect" class="form-select">
+                                <option value="">-- English English --</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label small fw-bold"><i class="fa-solid fa-layer-group"></i> English English</label>
+                            <select id="qzPrinterTypeSelect" class="form-select">
+                                <option value="unknown">English English</option>
+                                <option value="thermal">English</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label small fw-bold"><i class="fa-solid fa-plug"></i> English English</label>
+                            <select id="qzProtocolSelect" class="form-select">
+                                <option value="unknown">English English</option>
+                                <option value="escpos-raster">ESC/POS Raster (English English)</option>
+                                <option value="escpos-text">ESC/POS Text</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label small fw-bold"><i class="fa-solid fa-ruler"></i> English English</label>
+                            <select id="qzPaperSizeSelect" class="form-select">
+                                <option value="80mm">80mm (English)</option>
+                                <option value="58mm">58mm (English)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label small fw-bold"><i class="fa-solid fa-copy"></i> English English</label>
+                            <input type="number" id="qzCopiesInput" class="form-control" min="1" max="5" value="1">
+                        </div>
+
+                        <div class="col-md-6 d-flex align-items-center gap-3 pt-3 flex-wrap">
+                            <div class="form-check form-switch me-3">
+                                <input class="form-check-input" type="checkbox" id="qzEnabledToggle">
+                                <label class="form-check-label fw-bold small" for="qzEnabledToggle"><i class="fa-solid fa-print"></i> English English English</label>
+                            </div>
+                            <div class="form-check form-switch me-3">
+                                <input class="form-check-input" type="checkbox" id="qzAutoPrintNewOrdersToggle" checked>
+                                <label class="form-check-label fw-bold small" for="qzAutoPrintNewOrdersToggle"><i class="fa-solid fa-bolt"></i> English English English English</label>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <button class="btn btn-outline-secondary px-4 fw-bold me-2" onclick="refreshQZPrintersList()"><i class="fa-solid fa-rotate"></i> English English English</button>
+                            <button class="btn btn-outline-info px-4 fw-bold me-2" onclick="testQZPrint()"><i class="fa-solid fa-flask"></i> English English</button>
+                            <button class="btn btn-outline-dark px-4 fw-bold me-2" onclick="claimPrimaryPrinterRole()"><i class="fa-solid fa-crown"></i> English English English</button>
+                            <button class="btn btn-brand-dark px-4 fw-bold me-2" onclick="saveQZPrintingSettings()"><i class="fa-solid fa-floppy-disk"></i> English English English</button>
+                        </div>
+                        <div class="col-12"><div id="qzTestResultBox"></div></div>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card-gold text-center">
+                            <i class="fa-solid fa-sack-dollar fs-1 text-danger"></i>
+                            <h6 class="text-muted mt-2 mb-1">English English</h6>
+                            <h3 class="fw-black text-danger m-0" id="statRevenue">0 English.English</h3>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card-gold text-center">
+                            <i class="fa-solid fa-box-open fs-1 text-primary"></i>
+                            <h6 class="text-muted mt-2 mb-1">English English</h6>
+                            <h3 class="fw-black text-primary m-0" id="statOrdersCount">0</h3>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card-gold text-center">
+                            <i class="fa-solid fa-hourglass-half fs-1 text-warning"></i>
+                            <h6 class="text-muted mt-2 mb-1">English English</h6>
+                            <h3 class="fw-black text-warning m-0" id="statPendingCount">0</h3>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card-gold text-center">
+                            <i class="fa-solid fa-fire-burner fs-1 text-success"></i>
+                            <h6 class="text-muted mt-2 mb-1">English English</h6>
+                            <h3 class="fw-black text-success m-0" id="statPreparingCount">0</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-3 rounded-3 shadow-sm border mb-4 admin-toolbar-row">
+                    <div class="admin-filter-scroll">
+                        <button class="btn btn-sm btn-dark rounded-pill px-3" onclick="filterAdminOrders('all')">English</button>
+                        <button class="btn btn-sm btn-outline-warning rounded-pill px-3" onclick="filterAdminOrders('New')"><i class="fa-regular fa-clock"></i> English</button>
+                        <button class="btn btn-sm btn-outline-info rounded-pill px-3" onclick="filterAdminOrders('Preparing')"><i class="fa-solid fa-fire-burner"></i> English English</button>
+                        <button class="btn btn-sm btn-outline-primary rounded-pill px-3" onclick="filterAdminOrders('OutForDelivery')"><i class="fa-solid fa-motorcycle"></i> English English</button>
+                        <button class="btn btn-sm btn-outline-success rounded-pill px-3" onclick="filterAdminOrders('Delivered')"><i class="fa-solid fa-circle-check"></i> English English</button>
+                        <button class="btn btn-sm btn-outline-danger rounded-pill px-3" onclick="filterAdminOrders('Cancelled')"><i class="fa-solid fa-circle-xmark"></i> English</button>
+                    </div>
+                    <div class="input-group input-group-sm admin-search-group">
+                        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" class="form-control" placeholder="English English English English English English..." oninput="searchAdminOrders(this.value)">
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-3 shadow-sm border">
+                    <div class="table-responsive">
+                        <div id="adminOrdersContainer" class="row g-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= English English: English English ================= -->
+            <div id="dishesTab" class="admin-tab-content d-none">
+                <div class="admin-toolbar-row admin-toolbar-row--simple mb-4">
+                    <button class="btn btn-brand-dark" data-bs-toggle="modal" data-bs-target="#addDishModal"><i class="fa-solid fa-plus"></i> English English English English</button>
+                    <div class="input-group input-group-sm admin-search-group">
+                        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" class="form-control" placeholder="English English English English..." oninput="searchDishesInAdmin(this.value)">
+                    </div>
+                </div>
+                <div class="row g-4" id="adminDishesGrid"></div>
+            </div>
+
+            <!-- ================= English English: English English ================= -->
+            <div id="categoriesTab" class="admin-tab-content d-none">
+                <div class="bg-white p-4 rounded-3 shadow-sm border mb-4">
+                    <h5 class="fw-bold mb-3"><i class="fa-solid fa-folder-tree"></i> English English English English English MongoDB</h5>
+                    <form onsubmit="addNewCategoryToDB(event)" class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">English English English *</label>
+                            <input type="text" id="catNameAr" class="form-control" placeholder="English: English English English" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">English English English</label>
+                            <input type="text" id="catNameEn" class="form-control" placeholder="e.g. Claypots">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-brand-dark"><i class="fa-solid fa-plus"></i> English English English English MongoDB</button>
+                        </div>
+                    </form>
+                </div>
+                <h5 class="fw-bold mb-3">English English English English English English</h5>
+                <div class="bg-white p-3 rounded-3 shadow-sm border" id="adminCategoriesList"></div>
+            </div>
+
+            <!-- ================= English English: English English English (Site Builder) ================= -->
+            <div id="designTab" class="admin-tab-content d-none">
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <!-- English English English English -->
+                        <div class="bg-white p-4 rounded-3 shadow-sm border mb-4">
+                            <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                                <h6 class="fw-bold m-0"><i class="fa-solid fa-palette text-warning me-1"></i> English English English English</h6>
+                                <button type="button" class="btn btn-outline-danger btn-sm rounded-pill fw-bold" onclick="resetToDefaultTheme()">
+                                    <i class="fa-solid fa-arrow-rotate-left me-1"></i> English English English
+                                </button>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English <span id="themePrimaryColorHex" class="text-muted"></span></label>
+                                    <input type="color" id="themePrimaryColor" class="form-control form-control-color w-100" oninput="updateLivePreviewStyles()">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English English English (Hover) <span id="themePrimaryHoverHex" class="text-muted"></span></label>
+                                    <input type="color" id="themePrimaryHover" class="form-control form-control-color w-100" oninput="updateLivePreviewStyles()">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English <span id="themeSecondaryColorHex" class="text-muted"></span></label>
+                                    <input type="color" id="themeSecondaryColor" class="form-control form-control-color w-100" oninput="updateLivePreviewStyles()">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English English <span id="themeGoldLightHex" class="text-muted"></span></label>
+                                    <input type="color" id="themeGoldLight" class="form-control form-control-color w-100" oninput="updateLivePreviewStyles()">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English <span id="themeDarkColorHex" class="text-muted"></span></label>
+                                    <input type="color" id="themeDarkColor" class="form-control form-control-color w-100" oninput="updateLivePreviewStyles()">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English <span id="themeBgColorHex" class="text-muted"></span></label>
+                                    <input type="color" id="themeBgColor" class="form-control form-control-color w-100" oninput="updateLivePreviewStyles()">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English English <span id="themeCardBgColorHex" class="text-muted"></span></label>
+                                    <input type="color" id="themeCardBgColor" class="form-control form-control-color w-100" oninput="updateLivePreviewStyles()">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English <span id="themeTextColorHex" class="text-muted"></span></label>
+                                    <input type="color" id="themeTextColor" class="form-control form-control-color w-100" oninput="updateLivePreviewStyles()">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English</label>
+                                    <select id="themeFontFamily" class="form-select" onchange="updateLivePreviewStyles()">
+                                        <option value="Tajawal">Tajawal (English English English)</option>
+                                        <option value="Reem Kufi">Reem Kufi (English English)</option>
+                                        <option value="Cairo">Cairo (English)</option>
+                                        <option value="Almarai">Almarai (English)</option>
+                                        <option value="Alexandria">Alexandria (English)</option>
+                                        <option value="Changa">Changa (English)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English (English: 20px)</label>
+                                    <input type="text" id="themeBorderRadius" class="form-control" placeholder="20px" oninput="updateLivePreviewStyles()">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">CSS English (English)</label>
+                                    <textarea id="themeCustomCss" class="form-control" rows="3" placeholder="/* English CSS English */"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- English English English English -->
+                        <div class="bg-white p-4 rounded-3 shadow-sm border">
+                            <h6 class="fw-bold mb-3"><i class="fa-solid fa-file-pen text-warning me-1"></i> English English English</h6>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English</label>
+                                    <input type="text" id="restaurantName" class="form-control" oninput="updateLivePreviewTexts()">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English/English English</label>
+                                    <input type="text" id="contentBrandTagline" class="form-control" oninput="updateLivePreviewTexts()">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English English (Hero)</label>
+                                    <input type="text" id="contentHeroTitle" class="form-control" oninput="updateLivePreviewTexts()">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English English English</label>
+                                    <input type="text" id="contentHeroSubtitle" class="form-control" oninput="updateLivePreviewTexts()">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English English English</label>
+                                    <input type="text" id="contentHeroBtn1Text" class="form-control" oninput="updateLivePreviewTexts()">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English English English</label>
+                                    <input type="text" id="contentHeroBtn2Text" class="form-control" oninput="updateLivePreviewTexts()">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">English English English English English</label>
+                                    <input type="text" id="contentHeroBgImage" class="form-control" placeholder="https://...">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English English</label>
+                                    <input type="text" id="contentDealsSectionTitle" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English English English</label>
+                                    <input type="text" id="contentDealsSectionSubtitle" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English English English</label>
+                                    <input type="text" id="contentTopSellersTitle" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">English English English English English</label>
+                                    <input type="text" id="contentTopSellersSubtitle" class="form-control">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">English English English English</label>
+                                    <input type="text" id="contentAnnouncementText" class="form-control" placeholder="English: English English English English!">
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="contentShowAnnouncement">
+                                        <label class="form-check-label fw-bold small" for="contentShowAnnouncement">English English English English</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">English English English (Footer)</label>
+                                    <input type="text" id="contentFooterText" class="form-control">
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex gap-2 mt-4 flex-wrap">
+                                <button class="btn btn-brand-dark flex-grow-1 fw-bold py-3" onclick="saveFullSiteBuilderSettingsToDB()">
+                                    <i class="fa-solid fa-floppy-disk me-1"></i> English English English English English
+                                </button>
+                                <button class="btn btn-outline-danger fw-bold py-3 px-4" onclick="resetToDefaultTheme()">
+                                    <i class="fa-solid fa-arrow-rotate-left me-1"></i> English English
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- English English English English -->
+                    <div class="col-lg-5">
+                        <div class="bg-white p-4 rounded-3 shadow-sm border" style="position: sticky; top: 20px;">
+                            <h6 class="fw-bold mb-3"><i class="fa-solid fa-eye text-warning me-1"></i> English English English</h6>
+                            <iframe id="livePreviewFrame" src="/" title="English English English" class="w-100 border rounded-3" style="height: 680px;" onload="scheduleLivePreviewDraft()"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= English English: English English (English English English) ================= -->
+            <div id="themesTab" class="admin-tab-content d-none">
+                <div class="row g-4">
+                    <!-- English English: English English English English -->
+                    <div class="col-xl-7 col-lg-6">
+                        <div class="bg-white p-4 rounded-4 shadow-sm border mb-4">
+                            <div class="d-flex align-items-center justify-content-between mb-2 flex-wrap gap-2">
+                                <h5 class="fw-black m-0 text-dark"><i class="fa-solid fa-swatchbook text-warning me-2"></i> English English English English</h5>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-outline-danger btn-sm rounded-pill fw-bold px-3 shadow-sm" onclick="resetToDefaultTheme()" title="English English English English English">
+                                        <i class="fa-solid fa-arrow-rotate-left me-1"></i> English English English English
+                                    </button>
+                                    <span class="badge bg-dark text-warning px-3 py-2 rounded-pill font-monospace fs-7">18 English English</span>
+                                </div>
+                            </div>
+                            <p class="text-muted small mb-4">English English English English. English English English English English English English English English "English English English" English English English English English English English English English English.</p>
+
+                            <div class="row row-cols-1 row-cols-md-2 g-3" id="themeCardsContainer">
+                                
+                                <!-- 1. English English -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="ottoman_royal" onclick="previewDesignTemplate('ottoman_royal')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">English & Fine Dining</span>
+                                            <h6 class="design-theme-card-title">English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #831826;" title="English English"></div>
+                                                <div class="palette-circle" style="background: #c59b27;" title="English English"></div>
+                                                <div class="palette-circle" style="background: #191214;" title="English"></div>
+                                                <div class="palette-circle" style="background: #faf7f2;" title="English"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('ottoman_royal')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 2. English English English -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="heritage_flame" onclick="previewDesignTemplate('heritage_flame')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">English English English</span>
+                                            <h6 class="design-theme-card-title">English English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #b83a1b;"></div>
+                                                <div class="palette-circle" style="background: #d97724;"></div>
+                                                <div class="palette-circle" style="background: #1e1715;"></div>
+                                                <div class="palette-circle" style="background: #f8f4ee;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('heritage_flame')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 3. English English (Nordic Luxury) -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="nordic_luxury" onclick="previewDesignTemplate('nordic_luxury')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">English & Boutique</span>
+                                            <h6 class="design-theme-card-title">English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #0f4c3a;"></div>
+                                                <div class="palette-circle" style="background: #c4a47c;"></div>
+                                                <div class="palette-circle" style="background: #0a2119;"></div>
+                                                <div class="palette-circle" style="background: #f5f8f6;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('nordic_luxury')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 4. English English (Dark Gold) -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="midnight_gold" onclick="previewDesignTemplate('midnight_gold')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">Dark Mode English</span>
+                                            <h6 class="design-theme-card-title">English English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #e6b422;"></div>
+                                                <div class="palette-circle" style="background: #9c7a1c;"></div>
+                                                <div class="palette-circle" style="background: #09090b;"></div>
+                                                <div class="palette-circle" style="background: #121216;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('midnight_gold')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 5. English English English -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="levantine_brass" onclick="previewDesignTemplate('levantine_brass')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">English English</span>
+                                            <h6 class="design-theme-card-title">English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #78222c;"></div>
+                                                <div class="palette-circle" style="background: #b38b32;"></div>
+                                                <div class="palette-circle" style="background: #1c2b21;"></div>
+                                                <div class="palette-circle" style="background: #fbf7ec;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('levantine_brass')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 6. English English English (Copper Steakhouse) -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="copper_steakhouse" onclick="previewDesignTemplate('copper_steakhouse')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">Steakhouse & Brisket</span>
+                                            <h6 class="design-theme-card-title">English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English: English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #bd532b;"></div>
+                                                <div class="palette-circle" style="background: #8c3b1c;"></div>
+                                                <div class="palette-circle" style="background: #1f1412;"></div>
+                                                <div class="palette-circle" style="background: #f9f5f0;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('copper_steakhouse')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 7. English English (Riviera Terracotta) -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="riviera_terracotta" onclick="previewDesignTemplate('riviera_terracotta')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">English English English</span>
+                                            <h6 class="design-theme-card-title">English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #ba4c3c;"></div>
+                                                <div class="palette-circle" style="background: #4a6857;"></div>
+                                                <div class="palette-circle" style="background: #222222;"></div>
+                                                <div class="palette-circle" style="background: #fcf9f5;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('riviera_terracotta')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 8. English English English -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="urban_bistro" onclick="previewDesignTemplate('urban_bistro')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">Minimal & Contemporary</span>
+                                            <h6 class="design-theme-card-title">English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #e63946;"></div>
+                                                <div class="palette-circle" style="background: #457b9d;"></div>
+                                                <div class="palette-circle" style="background: #1d3557;"></div>
+                                                <div class="palette-circle" style="background: #ffffff;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('urban_bistro')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 9. English English English -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="napoli_pizzeria" onclick="previewDesignTemplate('napoli_pizzeria')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">English & Pizzeria</span>
+                                            <h6 class="design-theme-card-title">English English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #c1272d;"></div>
+                                                <div class="palette-circle" style="background: #4b6f44;"></div>
+                                                <div class="palette-circle" style="background: #201a15;"></div>
+                                                <div class="palette-circle" style="background: #fdf6ec;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('napoli_pizzeria')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 10. English English English -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="classic_burger_diner" onclick="previewDesignTemplate('classic_burger_diner')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">English English & Fast Food</span>
+                                            <h6 class="design-theme-card-title">English English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #d62828;"></div>
+                                                <div class="palette-circle" style="background: #f7b32b;"></div>
+                                                <div class="palette-circle" style="background: #1a1a1a;"></div>
+                                                <div class="palette-circle" style="background: #fff8ee;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('classic_burger_diner')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 11. English English -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="sakura_sushi" onclick="previewDesignTemplate('sakura_sushi')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">English & Sushi Bar</span>
+                                            <h6 class="design-theme-card-title">English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #af1e3c;"></div>
+                                                <div class="palette-circle" style="background: #e8a5b8;"></div>
+                                                <div class="palette-circle" style="background: #120f0e;"></div>
+                                                <div class="palette-circle" style="background: #f8f4f1;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('sakura_sushi')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 12. English English -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="ocean_depths_seafood" onclick="previewDesignTemplate('ocean_depths_seafood')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">English English English</span>
+                                            <h6 class="design-theme-card-title">English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #0b3d5c;"></div>
+                                                <div class="palette-circle" style="background: #2e8b8b;"></div>
+                                                <div class="palette-circle" style="background: #071e2b;"></div>
+                                                <div class="palette-circle" style="background: #f2f8f8;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('ocean_depths_seafood')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 13. English English English -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="specialty_coffee_house" onclick="previewDesignTemplate('specialty_coffee_house')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">English & Specialty Coffee</span>
+                                            <h6 class="design-theme-card-title">English English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #6f4518;"></div>
+                                                <div class="palette-circle" style="background: #c8945b;"></div>
+                                                <div class="palette-circle" style="background: #221408;"></div>
+                                                <div class="palette-circle" style="background: #fbf3e7;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('specialty_coffee_house')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 14. English English -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="parisian_patisserie" onclick="previewDesignTemplate('parisian_patisserie')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">English & Patisserie English</span>
+                                            <h6 class="design-theme-card-title">English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #c98a9c;"></div>
+                                                <div class="palette-circle" style="background: #cba135;"></div>
+                                                <div class="palette-circle" style="background: #2a2422;"></div>
+                                                <div class="palette-circle" style="background: #fdf9f6;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('parisian_patisserie')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 15. English English English -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="cairo_street_koshary" onclick="previewDesignTemplate('cairo_street_koshary')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">English English English</span>
+                                            <h6 class="design-theme-card-title">English English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #d1382d;"></div>
+                                                <div class="palette-circle" style="background: #e8a33d;"></div>
+                                                <div class="palette-circle" style="background: #201a12;"></div>
+                                                <div class="palette-circle" style="background: #fbf4e4;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('cairo_street_koshary')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 16. English English -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="balady_ahwa" onclick="previewDesignTemplate('balady_ahwa')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">English English English</span>
+                                            <h6 class="design-theme-card-title">English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #5a3825;"></div>
+                                                <div class="palette-circle" style="background: #ab7b3f;"></div>
+                                                <div class="palette-circle" style="background: #1b140d;"></div>
+                                                <div class="palette-circle" style="background: #f4ecd9;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('balady_ahwa')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 17. English English English -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="taco_fiesta_mexicano" onclick="previewDesignTemplate('taco_fiesta_mexicano')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">English & Tex-Mex</span>
+                                            <h6 class="design-theme-card-title">English English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #e8542a;"></div>
+                                                <div class="palette-circle" style="background: #4c9a4a;"></div>
+                                                <div class="palette-circle" style="background: #201512;"></div>
+                                                <div class="palette-circle" style="background: #fef6e4;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('taco_fiesta_mexicano')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 18. English English -->
+                                <div class="col">
+                                    <div class="design-theme-card" data-preset="urban_vegan_green" onclick="previewDesignTemplate('urban_vegan_green')">
+                                        <span class="design-theme-card-badge"><i class="fa-solid fa-circle-check"></i> English English</span>
+                                        <div>
+                                            <span class="design-tag-chip">English & Healthy Organic</span>
+                                            <h6 class="design-theme-card-title">English English</h6>
+                                            <p class="design-theme-card-desc">English English English English English English English English English English English English English English English.</p>
+                                        </div>
+                                        <div>
+                                            <div class="design-palette-pills">
+                                                <div class="palette-circle" style="background: #3f7d4f;"></div>
+                                                <div class="palette-circle" style="background: #c9b896;"></div>
+                                                <div class="palette-circle" style="background: #16241a;"></div>
+                                                <div class="palette-circle" style="background: #f7faf5;"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-brand-dark btn-sm w-100 fw-bold rounded-3" onclick="event.stopPropagation(); applyDesignTemplate('urban_vegan_green')">
+                                                <i class="fa-solid fa-wand-magic-sparkles me-1"></i> English English English
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- English English English English English English -->
+                    <div class="col-xl-5 col-lg-6">
+                        <div style="position: sticky; top: 20px;">
+                            <div class="browser-frame">
+                                <div class="browser-header">
+                                    <div class="browser-dots">
+                                        <span class="browser-dot red"></span>
+                                        <span class="browser-dot yellow"></span>
+                                        <span class="browser-dot green"></span>
+                                    </div>
+                                    <div class="browser-address-bar">
+                                        <i class="fa-solid fa-lock text-success" style="font-size: 0.65rem;"></i>
+                                        <span>https://restaurant-live-menu.com</span>
+                                    </div>
+                                    <div class="browser-view-controls">
+                                        <button type="button" class="btn-view-mode active" onclick="setMockupViewMode('desktop', this)" title="English English"><i class="fa-solid fa-desktop"></i></button>
+                                        <button type="button" class="btn-view-mode" onclick="setMockupViewMode('tablet', this)" title="English"><i class="fa-solid fa-tablet-screen-button"></i></button>
+                                        <button type="button" class="btn-view-mode" onclick="setMockupViewMode('mobile', this)" title="English"><i class="fa-solid fa-mobile-screen"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="design-mock-container" id="mockContainer">
+                                    <div class="design-mock" id="themesInteractivePreview">
+                                        <!-- English English -->
+                                        <div class="mock-announcement">
+                                            <i class="fa-solid fa-bullhorn me-1"></i> English English 20% English English English English English English!
+                                        </div>
+
+                                        <!-- English -->
+                                        <div class="mock-navbar">
+                                            <div class="mock-brand-box">
+                                                <div class="mock-brand-icon"><i class="fa-solid fa-crown"></i></div>
+                                                <span id="previewMockBrandName">English</span>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span class="badge bg-danger rounded-pill px-2 py-1" style="font-size: 0.65rem;"><i class="fa-solid fa-circle text-white me-1"></i> English English</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- English English Hero -->
+                                        <div class="mock-hero" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=900');">
+                                            <div class="mock-hero-overlay"></div>
+                                            <div class="mock-hero-content">
+                                                <div class="mock-hero-title">English English English English</div>
+                                                <div class="mock-hero-sub">English English English English English English English English English</div>
+                                                <button class="mock-btn-primary"><i class="fa-solid fa-fire-burner me-1"></i> English English English</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- English English -->
+                                        <div class="mock-categories">
+                                            <span class="mock-category-pill active"><i class="fa-solid fa-fire me-1"></i> English English</span>
+                                            <span class="mock-category-pill"><i class="fa-solid fa-bowl-rice me-1"></i> English English</span>
+                                            <span class="mock-category-pill"><i class="fa-solid fa-utensils me-1"></i> English English</span>
+                                            <span class="mock-category-pill"><i class="fa-solid fa-glass-water me-1"></i> English</span>
+                                        </div>
+
+                                        <!-- English English English -->
+                                        <div class="mock-grid">
+                                            <div class="mock-card">
+                                                <div class="mock-card-img" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=400');">
+                                                    <span class="mock-card-tag"><i class="fa-solid fa-star text-warning"></i> 4.9 English English</span>
+                                                </div>
+                                                <div class="mock-card-body">
+                                                    <h6 class="mock-card-title">English English English English</h6>
+                                                    <p class="mock-card-desc">English English English English English English English English English English English</p>
+                                                    <div class="mock-card-footer">
+                                                        <span class="mock-price">340 English.English</span>
+                                                        <button class="mock-add-btn"><i class="fa-solid fa-plus"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mock-card">
+                                                <div class="mock-card-img" style="background-image: url('https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=400');">
+                                                    <span class="mock-card-tag"><i class="fa-solid fa-pepper-hot text-danger"></i> English English English</span>
+                                                </div>
+                                                <div class="mock-card-body">
+                                                    <h6 class="mock-card-title">English English English English</h6>
+                                                    <p class="mock-card-desc">English English English English English English English English English English English</p>
+                                                    <div class="mock-card-footer">
+                                                        <span class="mock-price">220 English.English</span>
+                                                        <button class="mock-add-btn"><i class="fa-solid fa-plus"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- English English English -->
+                                        <div class="mock-floating-cart">
+                                            <i class="fa-solid fa-basket-shopping text-warning"></i>
+                                            <span>English English: 1 English (340 English.English)</span>
+                                            <i class="fa-solid fa-arrow-left ms-2"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between text-muted small mt-3 px-2">
+                                <span><i class="fa-solid fa-shield-halved text-success me-1"></i> English 100%: English English English English English English English English.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= English English: English English ================= -->
+            <div id="couponsTab" class="admin-tab-content d-none">
+                <div class="admin-toolbar-row admin-toolbar-row--simple mb-4">
+                    <h5 class="fw-bold m-0"><i class="fa-solid fa-tags"></i> English English English English English MongoDB</h5>
+                    <button class="btn btn-brand-dark" data-bs-toggle="modal" data-bs-target="#addCouponModal"><i class="fa-solid fa-plus"></i> English English English English</button>
+                </div>
+                <div class="bg-white p-4 rounded-3 shadow-sm border">
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>English English</th>
+                                    <th>English English English</th>
+                                    <th>English English English</th>
+                                    <th>English English</th>
+                                    <th>English</th>
+                                    <th>English</th>
+                                </tr>
+                            </thead>
+                            <tbody id="couponsAdminTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= English English: English English English ================= -->
+            <div id="deliveryTab" class="admin-tab-content d-none">
+                <div class="admin-toolbar-row admin-toolbar-row--simple mb-4">
+                    <h5 class="fw-bold m-0"><i class="fa-solid fa-motorcycle"></i> English English English English English</h5>
+                    <button class="btn btn-brand-dark" data-bs-toggle="modal" data-bs-target="#addDeliveryAreaModal"><i class="fa-solid fa-plus"></i> English English English English</button>
+                </div>
+                <div class="bg-white p-4 rounded-3 shadow-sm border">
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>English English / English</th>
+                                    <th>English English</th>
+                                    <th>English English English</th>
+                                    <th>English English</th>
+                                    <th>English</th>
+                                </tr>
+                            </thead>
+                            <tbody id="deliveryAreasAdminTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= English English: English English ================= -->
+            <div id="tablesTab" class="admin-tab-content d-none">
+                <div class="admin-toolbar-row admin-toolbar-row--simple mb-4">
+                    <h5 class="fw-bold m-0"><i class="fa-solid fa-chair"></i> English English English</h5>
+                    <button class="btn btn-brand-dark" onclick="openTableModal()"><i class="fa-solid fa-plus"></i> English English</button>
+                </div>
+                <div class="bg-white p-4 rounded-3 shadow-sm border">
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <thead class="table-light">
+                                <tr><th>English English</th><th>English</th><th>English</th><th>English</th><th>English</th></tr>
+                            </thead>
+                            <tbody id="tablesAdminTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= English English: English English ================= -->
+            <div id="reviewsTab" class="admin-tab-content d-none">
+                <h5 class="fw-bold mb-3"><i class="fa-solid fa-star"></i> English English English English</h5>
+                <div class="bg-white p-4 rounded-3 shadow-sm border">
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>English English</th>
+                                    <th>English</th>
+                                    <th>English</th>
+                                    <th>English</th>
+                                    <th>English</th>
+                                    <th>English</th>
+                                </tr>
+                            </thead>
+                            <tbody id="reviewsAdminTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= English English: English English English ================= -->
+            <div id="usersTab" class="admin-tab-content d-none">
+                <h5 class="fw-bold mb-3">English English English English English English</h5>
+                <div class="bg-white p-4 rounded-3 shadow-sm border mb-5">
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>English English</th>
+                                    <th>English English</th>
+                                    <th>English English</th>
+                                    <th>English English English</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersAdminTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <h5 class="fw-bold mb-3 text-danger"><i class="fa-solid fa-user-shield"></i> English English English English English (Audit Logs)</h5>
+                <div class="bg-white p-4 rounded-3 shadow-sm border">
+                    <p class="text-muted small mb-3">English English English English English English English English English English MongoDB English English English.</p>
+                    <div class="table-responsive">
+                        <table class="table table-sm text-center">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>English English</th>
+                                    <th>English English</th>
+                                    <th>English English</th>
+                                    <th>English English</th>
+                                    <th>English English IP</th>
+                                    <th>English</th>
+                                </tr>
+                            </thead>
+                            <tbody id="auditLogsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= English English English ================= -->
+
+    <!-- English English English English -->
+    <div class="modal fade" id="addDishModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content modal-content-custom border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header-custom p-4 bg-dark text-white border-bottom border-warning">
+                    <h5 class="fw-bold m-0"><i class="fa-solid fa-utensils me-2 text-warning"></i> English English English English MongoDB</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="English"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form onsubmit="addNewDishToDB(event)">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">English English English *</label>
+                                <input type="text" id="dishTitle" class="form-control" placeholder="English: English English English" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">English English English MongoDB *</label>
+                                <select id="dishCategorySelect" class="form-select" required></select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">English English (English.English) *</label>
+                                <input type="number" id="dishPrice" class="form-control" placeholder="320" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">English English English (English)</label>
+                                <input type="number" id="dishDiscountPrice" class="form-control" placeholder="0">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-bold">English English English</label>
+                                <textarea id="dishDesc" class="form-control" rows="2" placeholder="English English English..."></textarea>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="image-uploader-card p-3 rounded-4 border bg-white shadow-sm">
+                                    <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2 flex-wrap gap-2">
+                                        <label class="form-label fw-bold m-0 text-dark">
+                                            <i class="fa-solid fa-image text-warning me-1"></i> English English
+                                        </label>
+                                        <ul class="nav nav-pills nav-sm bg-light p-1 rounded-pill border" id="addDishImgTabs" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active rounded-pill fw-bold py-1 px-3 fs-7" id="add-upload-file-tab" data-bs-toggle="pill" data-bs-target="#pills-add-upload-file" type="button" role="tab">
+                                                    <i class="fa-solid fa-upload me-1"></i> English English English
+                                                </button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link rounded-pill fw-bold py-1 px-3 fs-7" id="add-upload-url-tab" data-bs-toggle="pill" data-bs-target="#pills-add-upload-url" type="button" role="tab">
+                                                    <i class="fa-solid fa-link me-1"></i> English English
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="pills-add-upload-file" role="tabpanel">
+                                            <div class="drag-drop-zone p-4 text-center rounded-3 cursor-pointer border-dashed" onclick="document.getElementById('dishImgFile').click()" id="dishDropZone">
+                                                <input type="file" id="dishImgFile" class="d-none" accept="image/*" onchange="handleImageFileUpload(this, 'dishImg', 'dishImgPreview')">
+                                                <div class="drop-zone-icon mx-auto mb-2 text-warning fs-2">
+                                                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                                                </div>
+                                                <h6 class="fw-bold text-dark mb-1">English English English English English English English English</h6>
+                                                <small class="text-muted d-block">English English PNG, JPG, WEBP</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane fade" id="pills-add-upload-url" role="tabpanel">
+                                            <div class="input-group">
+                                                <span class="input-group-text bg-light text-muted"><i class="fa-solid fa-link"></i></span>
+                                                <input type="text" id="dishImg" class="form-control" placeholder="English English English English English (https://...)" oninput="handleImageUrlInput(this.value, 'dishImgPreview')">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="dishImgPreviewContainer" class="mt-3 p-3 border rounded-3 bg-light text-center d-none">
+                                        <div class="d-flex align-items-center justify-content-between mb-2 pb-2 border-bottom">
+                                            <span class="fw-bold small text-success"><i class="fa-solid fa-circle-check me-1"></i> English English English English</span>
+                                            <button type="button" class="btn btn-sm btn-outline-danger border-0 fw-bold" onclick="clearImageSelection('dishImgFile', 'dishImg', 'dishImgPreviewContainer', 'dishImgPreview')">
+                                                <i class="fa-solid fa-trash-can me-1"></i> English English
+                                            </button>
+                                        </div>
+                                        <div class="preview-img-wrapper mx-auto" style="max-width: 220px;">
+                                            <img id="dishImgPreview" src="" alt="English English" class="img-fluid rounded-3 shadow-sm border" style="max-height: 150px; object-fit: cover; width: 100%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 bg-light p-3 rounded-3 border">
+                                <label class="form-label fw-bold text-dark d-block"><i class="fa-solid fa-ruler-combined me-1"></i> English English English (English:English, English:English)</label>
+                                <input type="text" id="dishSizesInput" class="form-control" placeholder="English English:160, English English:320">
+                            </div>
+                            <div class="col-12 bg-light p-3 rounded-3 border">
+                                <label class="form-label fw-bold text-dark d-block"><i class="fa-solid fa-circle-plus me-1"></i> English English (English:English, English:English)</label>
+                                <input type="text" id="dishAddonsInput" class="form-control" placeholder="English English:15, English English:10">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-brand-red w-100 fw-bold py-3 mt-4 shadow-sm"><i class="fa-solid fa-floppy-disk me-1"></i> English English English </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- English English English -->
+    <div class="modal fade" id="editDishModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header-custom bg-warning">
+                    <h5 class="fw-bold m-0 text-dark"><i class="fa-solid fa-pen-to-square"></i> English English English English English MongoDB</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="English"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form onsubmit="submitEditDishToDB(event)">
+                        <input type="hidden" id="editDishId">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">English English English *</label>
+                                <input type="text" id="editDishTitle" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">English English *</label>
+                                <select id="editDishCategorySelect" class="form-select" required></select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">English English (English.English) *</label>
+                                <input type="number" id="editDishPrice" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">English English English</label>
+                                <input type="number" id="editDishDiscountPrice" class="form-control">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-bold">English English</label>
+                                <textarea id="editDishDesc" class="form-control" rows="2"></textarea>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="image-uploader-card p-3 rounded-4 border bg-white shadow-sm">
+                                    <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2 flex-wrap gap-2">
+                                        <label class="form-label fw-bold m-0 text-dark">
+                                            <i class="fa-solid fa-image text-warning me-1"></i> English English
+                                        </label>
+                                        <ul class="nav nav-pills nav-sm bg-light p-1 rounded-pill border" id="editDishImgTabs" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active rounded-pill fw-bold py-1 px-3 fs-7" id="edit-upload-file-tab" data-bs-toggle="pill" data-bs-target="#pills-edit-upload-file" type="button" role="tab">
+                                                    <i class="fa-solid fa-upload me-1"></i> English English English
+                                                </button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link rounded-pill fw-bold py-1 px-3 fs-7" id="edit-upload-url-tab" data-bs-toggle="pill" data-bs-target="#pills-edit-upload-url" type="button" role="tab">
+                                                    <i class="fa-solid fa-link me-1"></i> English English
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="pills-edit-upload-file" role="tabpanel">
+                                            <div class="drag-drop-zone p-4 text-center rounded-3 cursor-pointer border-dashed" onclick="document.getElementById('editDishImgFile').click()" id="editDishDropZone">
+                                                <input type="file" id="editDishImgFile" class="d-none" accept="image/*" onchange="handleImageFileUpload(this, 'editDishImg', 'editDishImgPreview')">
+                                                <div class="drop-zone-icon mx-auto mb-2 text-warning fs-2">
+                                                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                                                </div>
+                                                <h6 class="fw-bold text-dark mb-1">English English English English English English English English</h6>
+                                                <small class="text-muted d-block">English English PNG, JPG, WEBP</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane fade" id="pills-edit-upload-url" role="tabpanel">
+                                            <div class="input-group">
+                                                <span class="input-group-text bg-light text-muted"><i class="fa-solid fa-link"></i></span>
+                                                <input type="text" id="editDishImg" class="form-control" placeholder="English English English English English (https://...)" oninput="handleImageUrlInput(this.value, 'editDishImgPreview')">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="editDishImgPreviewContainer" class="mt-3 p-3 border rounded-3 bg-light text-center d-none">
+                                        <div class="d-flex align-items-center justify-content-between mb-2 pb-2 border-bottom">
+                                            <span class="fw-bold small text-success"><i class="fa-solid fa-circle-check me-1"></i> English English English</span>
+                                            <button type="button" class="btn btn-sm btn-outline-danger border-0 fw-bold" onclick="clearImageSelection('editDishImgFile', 'editDishImg', 'editDishImgPreviewContainer', 'editDishImgPreview')">
+                                                <i class="fa-solid fa-trash-can me-1"></i> English English
+                                            </button>
+                                        </div>
+                                        <div class="preview-img-wrapper mx-auto" style="max-width: 220px;">
+                                            <img id="editDishImgPreview" src="" alt="English English" class="img-fluid rounded-3 shadow-sm border" style="max-height: 150px; object-fit: cover; width: 100%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 bg-light p-3 rounded-3 border">
+                                <label class="form-label fw-bold text-dark d-block"><i class="fa-solid fa-ruler-combined"></i> English English (English:English, English:English)</label>
+                                <input type="text" id="editDishSizesInput" class="form-control">
+                            </div>
+                            <div class="col-12 bg-light p-3 rounded-3 border">
+                                <label class="form-label fw-bold text-dark d-block"><i class="fa-solid fa-circle-plus"></i> English English (English:English, English:English)</label>
+                                <input type="text" id="editDishAddonsInput" class="form-control">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100 fw-bold py-3 mt-4 text-dark fs-6"><i class="fa-solid fa-floppy-disk"></i> English English English MongoDB</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- English English English English -->
+    <div class="modal fade" id="addCouponModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header-custom">
+                    <h5 class="fw-bold m-0"><i class="fa-solid fa-tags"></i> English English English English</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="English"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form onsubmit="addNewCouponToDB(event)">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">English English *</label>
+                            <input type="text" id="couponCode" class="form-control text-uppercase" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">English English English (%) *</label>
+                            <input type="number" id="couponPercentage" class="form-control" placeholder="20" min="1" max="100" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">English English English English (English.English)</label>
+                            <input type="number" id="couponMinOrder" class="form-control" placeholder="100">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">English English *</label>
+                            <input type="date" id="couponExpiration" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-brand-dark w-100 fw-bold py-2"><i class="fa-solid fa-floppy-disk"></i> English English English MongoDB</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- English English English English English -->
+    <div class="modal fade" id="addDeliveryAreaModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header-custom">
+                    <h5 class="fw-bold m-0"><i class="fa-solid fa-motorcycle"></i> English English English English</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="English"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form onsubmit="addNewDeliveryAreaToDB(event)">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">English English / English *</label>
+                            <input type="text" id="areaName" class="form-control" placeholder="English: English - English" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">English English English (English.English) *</label>
+                            <input type="number" id="areaDeliveryFee" class="form-control" placeholder="25" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">English English English English (English.English)</label>
+                            <input type="number" id="areaMinOrder" class="form-control" placeholder="100">
+                        </div>
+                        <button type="submit" class="btn btn-brand-dark w-100 py-2"><i class="fa-solid fa-floppy-disk"></i> English English English MongoDB</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- English English/English English -->
+    <div class="modal fade" id="tableModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header-custom">
+                    <h5 class="fw-bold m-0" id="tableModalTitle"><i class="fa-solid fa-chair"></i> English English</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="English"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form onsubmit="saveTable(event)">
+                        <input type="hidden" id="tableId">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">English English *</label>
+                            <input type="text" id="tableNumber" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">English English *</label>
+                            <input type="number" id="tableSeats" class="form-control" min="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">English</label>
+                            <select id="tableStatus" class="form-select">
+                                <option value="available">English</option>
+                                <option value="reserved">English</option>
+                                <option value="occupied">English</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">English</label>
+                            <textarea id="tableNotes" class="form-control" rows="2"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-brand-dark w-100 py-2"><i class="fa-solid fa-floppy-disk"></i> English</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/qz-tray.js"></script>
+    <script src="js/qz-print.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
